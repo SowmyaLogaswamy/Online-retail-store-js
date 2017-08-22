@@ -19,9 +19,10 @@ albums: FirebaseListObservable<any[]>;
 
   ngOnInit(){
     this.albums = this.albumService.getAlbums();
+    console.log(this.router.url);
   }
 
-  goToDetailPage(clickedAlbum: Album) {
-    this.router.navigate(['albums', clickedAlbum.id]);
+  goToDetailPage(clickedAlbum) {
+    this.router.navigate(['albums', clickedAlbum.$key]);
   };
 }
